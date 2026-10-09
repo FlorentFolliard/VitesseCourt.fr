@@ -1,0 +1,21 @@
+version: '3.8'
+
+services:
+  db:
+    image: postgres:16-alpine
+    container_name: speedrun_db
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: speedrun_admin
+      POSTGRES_PASSWORD: speedrun_password
+      POSTGRES_DB: speedrun_db
+    ports:
+      - "5432:5432"
+    volumes:
+      # Conserve les données sur votre machine même si le conteneur s'arrête
+      - pgdata:/var/lib/postgresql/data
+      # Exécute automatiquement projet.sql à la première création du conteneur
+      - ./projet.sql:/docker-entrypoint-initdb.d/init.sql
+
+volumes:
+  pgdata:
