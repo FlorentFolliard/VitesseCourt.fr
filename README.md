@@ -1,4 +1,4 @@
-# Speedrun.com Clone - Projet de SQL Avancé
+# VitesseCourt.fr - Projet de SQL Avancé
 
 Plateforme de gestion de speedruns permettant de stocker des scores, d'associer des joueurs à des jeux, de gérer des sanctions et de consulter des classements vérifiés.
 
